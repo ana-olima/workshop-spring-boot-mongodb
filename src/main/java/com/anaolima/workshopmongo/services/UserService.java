@@ -1,6 +1,7 @@
 package com.anaolima.workshopmongo.services;
 
 import com.anaolima.workshopmongo.domain.User;
+import com.anaolima.workshopmongo.dto.UserDTO;
 import com.anaolima.workshopmongo.repository.UserRepository;
 import com.anaolima.workshopmongo.services.exception.ObjectNotFoundException;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Service
 public class UserService {
+
 
 	@Autowired
 	private UserRepository repo;
@@ -28,5 +30,10 @@ public class UserService {
 		}
 		return user;
 	}
-	
+	public User insert (User obj){
+		return repo.insert(obj);
+	}GIT
+	public User fromDTO(UserDTO objDto){
+		return new User(objDto.getId(), objDto.getName(),objDto.getEmail());
+	}
 }

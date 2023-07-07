@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class UserService {
 
@@ -46,7 +45,6 @@ public class UserService {
 		newObj.setName(obj.getName());
 		newObj.setEmail(obj.getEmail());
 	}
-
 	public User fromDTO(UserDTO objDto){
 		return new User(objDto.getId(), objDto.getName(),objDto.getEmail());
 	}
